@@ -117,7 +117,7 @@ def amat_all(cube, angle_list, psfn, pixels=None, prad=1, fwhm=4, ncomp=1,
 
 def amat_for_a_trajectory(cube, angle_list, psfn, planet_position, prad=1, 
                           ncomp=1, fwhm=4, MAX_ITER=100, asize=4, norm=1, 
-                          maxiter_inner=5, alg='ann', eps=0.001, map_output=False, plot=False):
+                          maxiter_inner=5, alg='ann', eps=0.001, map_output=False):
     """
     Computes flux and model PSF for given trajectory.
 
@@ -175,22 +175,6 @@ def amat_for_a_trajectory(cube, angle_list, psfn, planet_position, prad=1,
         
     
     frame, L, res_, a, i = res
-    
-    from vip_hci.metrics import snrmap
-    if plot:
-        snr = snrmap(frame, fwhm, verbose=False)
-        if x == 42:
-            plot_frames(snr, circle=(x,y), vmax=18, vmin=-4.30, axis=False)
-            plot_frames(snr, circle=(x,y), save='l{}_iter{}.pdf'.format(norm,MAX_ITER), axis=False, vmax=18, vmin=-4.30)
-        else:
-            plot_frames(snr, circle=(x,y), vmax=10, vmin=-4.30, axis=False)
-            plot_frames(snr, circle=(x,y), save='l{}_iter{}_noplanet.pdf'.format(norm,MAX_ITER), axis=False, vmax=10, vmin=-4.30)
-            
-    
-        snr_value = vip.metrics.snr(frame, (x,y), fwhm)
-        print("Iter:", MAX_ITER)
-        print("SNR:", snr_value)
-        print("a:", a)
     
     if map_output:
         return frame, res_, planet_position, a, i

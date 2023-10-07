@@ -13,7 +13,7 @@ In direct exoplanet detection, existing algorithms use techniques based on a low
 
 
 ### CITE:
-Please cite "An Alternating Minimization Algorithm with Trajectory for Direct Exoplanet Detection". The link will be provided as soon as possible.  
+Please cite "An Alternating Minimization Algorithm with Trajectory for Direct Exoplanet Detection". https://doi.org/10.14428/esann/2023.ES2023-137.  
 
 Please also provide a link to this webpage in your paper (https://github.com/hazandaglayan/amat)
 
